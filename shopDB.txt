@@ -1,0 +1,138 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.0.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jul 26, 2017 at 03:48 PM
+-- Server version: 5.1.36
+-- PHP Version: 5.3.0
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `node1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Hard Disks'),
+(2, 'Printer'),
+(3, 'Tablets'),
+(4, 'Ear Phones'),
+(5, 'Pen Drives'),
+(6, 'Mobiles');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE IF NOT EXISTS `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cat_id` int(11) NOT NULL,
+  `image` text NOT NULL,
+  `title` text NOT NULL,
+  `price` text NOT NULL,
+  `brand` text NOT NULL,
+  `short_desc` text NOT NULL,
+  `description` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `cat_id`, `image`, `title`, `price`, `brand`, `short_desc`, `description`) VALUES
+(1, 1, 'images/sony.jpeg', 'Sony 1TB HDD', '3999', 'sony', '', ''),
+(2, 1, 'images/seagate-1tb.jpeg', 'Seagate Backup Plus 1TB ', '4199', 'seagate', '', ''),
+(3, 1, 'images/toshiba-1tb.jpeg', 'Toshiba Canvio 1TB', '4190', 'toshiba', '', ''),
+(4, 1, 'images/samsung.jpeg', 'Samsung M3 1TB HDD', '4499', 'samsung', '', ''),
+(5, 1, 'images/seagate-500.jpeg', 'Seagate Momentus 500Gb', '3490', 'seagate', '', ''),
+(6, 2, 'images/p1.jpg', ' Epson L220 Multi-function Inkjet Printer', '10000', 'epson', '', ''),
+(7, 2, 'images/p2.jpg', 'Samsung - ML 2161 Monochrome Laser Printer', '4990', 'samsung', '', ''),
+(8, 2, 'images/p3.jpg', 'Canon PIXMA MG3570 ', '4300', 'canon', '', ''),
+(9, 3, 'images/2.jpg', 'Lenovo Tab 2 A7-10 Tablet', '5200', 'lenovo', '', ''),
+(10, 3, 'images/3.jpg', 'iBall Slide 6351 Q40i Tablet?', '6900', 'iball', '', ''),
+(11, 3, 'images/4.jpg', 'Micromax Canvas Tab P290', '5833', 'micromax', '', ''),
+(12, 3, 'images/5.jpg', 'Lenovo  Tab 2 A7-30 Tablet', '5682', 'lenovo', '', ''),
+(13, 3, 'images/15.jpg', 'Datawind Vidya Tablet', '4500', 'datawind', '', ''),
+(14, 4, 'images/pic1.jpg', 'Sennheiser CX 180 Street II Earphone', '990', 'sennheiser', '', ''),
+(15, 4, 'images/pic2.jpg', 'Philips SHE1360/97 Earphone', '129', 'philips', '', ''),
+(16, 4, 'images/pic3.jpg', 'Skullcandy JIB S2DUDZ-003  Earphone', '749', 'skullcandy', '', ''),
+(17, 4, 'images/pic4.jpg', 'JBL T150A White Classic-003 Earphone', '1799', 'JBL', '', ''),
+(18, 4, 'images/pic5.jpg', 'Sony MDR-XB30EX Earphone', '2190', 'sony', '', ''),
+(19, 4, 'images/pic6.jpg', 'Soundmagic PL 11 Earphone', '1499', 'soundmagic', '', ''),
+(20, 4, 'images/pic7.jpg', 'UBON Earphone', '126', 'UBON', '', ''),
+(21, 4, 'images/pic8.jpg', 'Muven MV-EP200PRB Earphone', '179', 'muven', '', ''),
+(22, 4, 'images/pic9.jpg', 'Astrum EB-117B Earphone', '300', 'astrum', '', ''),
+(23, 4, 'images/pic10.jpg', 'Sunplus Xiomi Earphone', '999', 'sunplus', '', ''),
+(24, 5, 'images/1.jpeg', 'SanDisk Ultra Dual 2', '1500', 'sandisk', '', ''),
+(25, 5, 'images/2.jpeg', 'Interstep IS-FD-OTG32GMET-ENGB902 ', '1500', 'interstep', '', ''),
+(26, 5, 'images/3.jpeg', 'Sony Micro Vault USM16GR', '1499', 'sony', '', ''),
+(27, 5, 'images/4.jpeg', ' iBall Hybrid ', '750', 'iball', '', ''),
+(28, 5, 'images/5.jpeg', 'HP V-220 W', '850', 'HP', '', ''),
+(29, 6, 'images/HTC1.jpeg', 'Nokia Lumia 1520', '39860', 'nokia', '', ''),
+(30, 6, 'images/HTC1.jpeg', 'Nokia Lumia 1020', '22335', 'nokia', '', ''),
+(31, 6, 'images/htc2.jpeg', 'HTC Desire 516', '16950', 'HTC', '', ''),
+(32, 6, 'images/htc2.jpeg', 'HTC Desire 526G Plus', '15666', 'HTC', '', ''),
+(33, 6, 'images/htc2.jpeg', 'HTC Desire 626 4G LTE ', '12458', 'HTC', '', ''),
+(34, 6, 'images/htc3.jpeg', 'HTC Desire 820S', '75698', 'HTC', '', ''),
+(35, 6, 'images/sony4.jpg', 'Sony Xperia M4 Aqua Dual', '18560', 'sony', '', ''),
+(36, 6, 'images/sony3.jpg', 'Sony Xperia E4', '15800', 'sony', '', ''),
+(37, 6, 'images/11.jpg', 'Lenovo G50-80 (Notebook) ', '45990', 'lenovo', '', ''),
+(38, 6, 'images/12.jpg', 'Lenovo IdeaPad 100-14IBD 80RK002UIH ', '28990', 'lenovo', '', ''),
+(39, 6, 'images/13.jpg', 'Lenovo G50 G Series G50-45 80E3020BIH', '24990', 'lenovo', '', ''),
+(40, 6, 'images/14.jpg', 'Lenovo IdeaPad 500S - 14ISK 80Q3005AIN ', '51990', 'lenovo', '', ''),
+(46, 6, 'uploads/Penguins.jpg', 'Penguin', '2000', 'Penguin', 'This is Penguin ', 'Enter Full Description of Product Here');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
+(1, 'him', 'him@gmail.com', '123'),
+(2, 'himanshu', 'him@gmail.com', '456'),
+(3, 'user 1', 'user1@gmail.com', '123'),
+(4, 'user 1', 'user1@gmail.com', '123'),
+(5, 'user 2', 'user2@gmail.com', '123'),
+(6, 'user 2', 'user2@gmail.com', '123'),
+(7, 'user 3', 'user3@gmail.com', '123'),
+(8, 'user 4', 'user4@gmail.com', '123'),
+(9, 'user 5', 'user5@gmail.com', '123'),
+(10, 'user 6', 'user6@gmail.com', '123'),
+(11, 'user 7', 'user7@gmail.com', '123'),
+(12, 'user 8', 'user8@gmail.com', '123'),
+(13, 'user 9', 'user9@gmail.com', '123'),
+(14, 'user 10', 'user10@gmail.com', '123'),
+(15, 'user 11', 'user11@gmail.com', '123');
